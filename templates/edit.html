@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/home-bg.jpg')}}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+
+            <!--# See here {{params['blog_name']}} is done with the help of config.json fline there we have
+            # defined {{params['blog_name']}} as The coading world. It is done as
+            # suppose if reliance wants to buy my bloging channel  then only that jason file 1 line needs
+            # to be changed and all name as The coading world will be converted to what relaince wants.
+
+
+
+            # similarly for secounf line heere we can be we have used
+            # {{params['tag_line']}} because if some one wants quotes as "Blog for JIO User"
+            # then all tag line can be change from one place-->
+
+            <h1>Admin Pannel</h1>
+            <span class="subheading">Manage And Post And Change Them</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+
+
+          <h1>Basic Action</h1>
+
+          <a href="Dashboard Home"> <button class="btn btn-primary">Dashboard Home</button></a>
+          <a href="logout"> <button class="btn btn-primary">logout</button></a>
+<hr>
+<!-- now we are using jinja for loop to display our blogging website-->
+<h1>ADD/Edit Posts</h1>
+<form name="sentMessage" id="contactForm" action = "/edit/{{post.sno}}" method = "post" novalidate>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Title</label>
+              <input type="text" class="form-control" placeholder="Title" name = "title" id="title" required data-validation-required-message="Please enter your name." value="{{post.title}}">
+              <!-- See here in above line id and name is title as i have used same in main.py place as title-->
+
+
+                <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Tagline</label>
+
+              <input type="text" class="form-control" placeholder="Tagline" name = "tline" id="tline" required data-validation-required-message="Please enter your email address." value="{{post.tagline}}">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group col-xs-12 floating-label-form-group controls">
+              <label>Slug</label>
+              <input type="text" class="form-control" placeholder="Slug" name = "slug" id="slug" required data-validation-required-message="Please enter your phone number." value="{{post.slug}}">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Content</label>
+              <textarea rows="5" class="form-control" placeholder="Content" name = "content" id="content" required data-validation-required-message="Please enter a message.">{{post.content}}</textarea>
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+
+              <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Image File</label>
+              <input class="form-control" placeholder="Image File" name = "img_file" id="img_file" value="{{post.img_file}}">
+                <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <br>
+          <div id="success"></div>
+              <div class="form-group">
+          <button type="submit" class="btn btn-primary" id="sendMessageButton">Submit</button>
+              </div>
+</form>
+
+
+
+
+        <!-- Pager -->
+
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

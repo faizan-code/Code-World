@@ -1,0 +1,22 @@
+{
+  "params":
+  {
+    "local_server": "True",
+    "local_uri": "mysql://root:@localhost/coadingworld",
+    "prod_uri": "mysql://root:@localhost/coadingworld",
+    "fb_url": "https://www.facebook.com/faizan.ashraf.5220",
+    "tw_url": "https://twitter.com",
+    "gh_url": "https://github.com/faizan-code",
+    "lk_url": "https://www.linkedin.com/in/faizan-ashraf-5290971aa/",
+    "blog_name": "The Coding world",
+    "tag_line": "A Blog Liked by Programmers",
+    "gmail-user": "go2faizanjob@gmail.com",
+    "gmail-password": "faizan8797391969ashraf",
+    "about_text": "Hi my name is Faizan and I create programming tutorials and I am a good boy",
+    "no_of_posts" : 3,
+    "login_image": "logo1.jpg",
+    "admin_user": "faizan",
+    "admin_password": "Freedom@10",
+    "uplaod_location": "D:\\PycharmProjects\\flask_main_harry\\static"
+  }
+}
